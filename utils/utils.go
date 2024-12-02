@@ -25,6 +25,18 @@ func SumInt(ints []int64) int64 {
 	return sum
 }
 
+func Distance(a, b int) (int, bool) {
+	diff := a - b
+	positive := diff >= 0
+	if diff < 0 {
+		diff = -diff
+	}
+	return diff, positive
+}
+
 func DeleteAtIndex(slice []int, index int) []int {
-	return append(slice[:index], slice[index+1:]...)
+	var newSlice []int
+	newSlice = append(newSlice, slice[:index]...)
+	newSlice = append(newSlice, slice[index+1:]...)
+	return newSlice
 }
